@@ -4,6 +4,6 @@ project(punctuator_cpp)
 
 find_package(Torch REQUIRED)
 
-add_executable(punctuator_cpp deve.cc)
+add_executable(punctuator_cpp punctuator.cc)
 target_link_libraries(punctuator_cpp "${TORCH_LIBRARIES}")
 set_property(TARGET punctuator_cpp PROPERTY CXX_STANDARD 14)
