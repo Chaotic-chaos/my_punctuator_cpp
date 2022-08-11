@@ -1,0 +1,63 @@
+{
+    "tasks": [
+        {
+            // make build filder
+            "label": "mkdir_build_dir",
+            "command": "mkdir",
+            "type": "shell",
+            "args": [
+                "-p",
+                "${workspaceFolder}/build"
+            ],
+            // "windows": {
+            //     "options": {
+            //         "shell": {
+            //             "executable": "powershell.exe"
+            //         }
+            //     },
+            //     "args": [
+            //         "-Force",
+            //         "${workspaceFolder}/export_model/examples/example_punctuator/build"
+            //     ],
+            // }
+        },
+
+        {
+            // call CMake to configurate
+            "label": "cmake",
+            "command": "cmake",
+            "type": "shell",
+            "args": [
+                "-DCMAKE_PREFIX_PATH=./libtorch",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                "-S", "${workspaceFolder}/src",
+                "-B", "${workspaceFolder}/build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build",
+            },
+            "dependsOn": [
+                "mkdir_build_dir"
+            ]
+        },
+
+        {
+            "label": "build",
+            "command": "cmake",
+            "type": "shell",
+            "group": "build",
+            "args": [
+                "--build",
+                ".",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build",
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": [
+                "cmake"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
