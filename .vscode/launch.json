@@ -34,6 +34,34 @@
         },
 
         {
+            "name": "Run bind",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bind/build/punctuator",
+            "args": [
+                // "${workspaceFolder}/models/punctuator/punctuator.pth"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/bind/build/",
+            "preLaunchTask": "build_bind",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description":  "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        {
             "name": "Python: 当前文件",
             "type": "python",
             "request": "launch",

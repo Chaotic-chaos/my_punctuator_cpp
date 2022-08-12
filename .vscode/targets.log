@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 11 20:39:01 2022
+# Make data base, printed on Fri Aug 12 15:03:21 2022
 
 # Variables
 
@@ -119,7 +119,7 @@ MOTD_SHOWN = pam
 # automatic
 ^F = $(notdir $^)
 # environment
-SSH_CLIENT = 10.0.0.238 2340 22
+SSH_CLIENT = 10.0.0.238 10579 22
 # environment
 TZ = Asia/Shanghai
 # automatic
@@ -153,7 +153,7 @@ XDG_RUNTIME_DIR = /run/user/0
 # environment
 _CE_M = 
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-5ce4dd2d-05b2-4067-857d-08e659fcaec2.sock
+VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-a14e10eb-40a9-4302-8b5f-46c43ce5e40a.sock
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -163,7 +163,7 @@ HOME = /root
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-XDG_SESSION_ID = 650
+XDG_SESSION_ID = 726
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -181,7 +181,7 @@ CONDA_EXE = /root/miniconda3/bin/conda
 # environment
 _CE_CONDA = 
 # environment
-SSH_CONNECTION = 10.0.0.238 2340 10.0.0.175 22
+SSH_CONNECTION = 10.0.0.238 10579 10.0.0.175 22
 # variable set hash-table stats:
 # Load=85/1024=8%, Rehash=0, Collisions=2/112=2%
 
@@ -191,9 +191,9 @@ SSH_CONNECTION = 10.0.0.238 2340 10.0.0.175 22
 
 # Directories
 
-# . (device 2051, inode 845784): 6 files, no impossibilities.
+# . (device 2051, inode 845784): 8 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -243,12 +243,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 115 B / avg = 8 B
-# current buf: size = 8162 B / used = 115 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 16 / storage = 131 B / avg = 8 B
+# current buf: size = 8162 B / used = 131 B / count = 16 / avg = 8 B
 
-# strcache performance: lookups = 17 / hit rate = 17%
+# strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Thu Aug 11 20:39:01 2022
+# Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
+# Finished Make data base on Fri Aug 12 15:03:21 2022
 
  

@@ -1,3 +1,6 @@
 models/
 build/
 src/libtorch
+**/build
+venv/
+**/pybind11
