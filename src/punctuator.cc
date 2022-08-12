@@ -19,19 +19,6 @@ Input: !
 #include <string>
 #include "punctuator.h"
 
-// Functions defination
-// void Punctuator::setup_input_dict(std::string input_dict_path){
-//     // load input_dict
-//     std::string line;
-//     std::ifstream infile;
-//     infile.open(input_dict_path);
-
-//     for (int i=0; getline(infile, line); i++){
-//         input_dict[line] = i;
-//     }
-
-//     return;
-// }
 
 Punctuator::Punctuator(){
     return;
@@ -68,8 +55,8 @@ std::string Punctuator::decode(int *sentence, int size)
     }
     input_tensor = input_tensor.unsqueeze(0);
     input_final.push_back(input_tensor);
-    std::cout << input_tensor << "\n";
-    std::cout << input_final << "\n";
+    // std::cout << input_tensor << "\n";
+    // std::cout << input_final << "\n";
 
     // inference
     torch::Tensor res = model.forward(input_final).toTensor();
@@ -82,7 +69,7 @@ std::string Punctuator::decode(int *sentence, int size)
         final_res.append(label_dict[j]);
         final_res.append(" ");
     }
-    std::cout << final_res << "\n";
+    // std::cout << final_res << "\n";
 
     return final_res;
 }

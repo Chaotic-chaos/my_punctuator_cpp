@@ -4,3 +4,4 @@ src/libtorch
 **/build
 venv/
 **/pybind11
+**/libtorch
