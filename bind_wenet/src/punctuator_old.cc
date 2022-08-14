@@ -89,6 +89,10 @@ std::string Punctuator::decode(int *sentence, int size)
     return final_res;
 }
 
+int add(){
+	return 3;
+}
+
 // int main()
 // {
 //     Punctuator punctuator;

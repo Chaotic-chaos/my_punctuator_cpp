@@ -12,11 +12,4 @@ Software:      Vscode
 Test the complie
 '''
 
-from ctypes import *
-
-if __name__ == '__main__':
-    pSo = CDLL("bind/build/punctuator.cpython-38-x86_64-linux-gnu.so")
-
-    punc = pSo.Punctuator()
-
-    print(punc)
+import 

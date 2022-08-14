@@ -19,7 +19,22 @@ Input: !
 #include <string>
 #include <sstream>
 #include <vector>
-#include "punctuator.h"
+// #include "punctuator.h"
+
+class Punctuator
+{
+public:
+    std::map<int, std::string> label_dict = {
+        {1, "，COMMA"},
+        {2, "。PERIOD"},
+        {3, "？QUESTIONMARK"},
+        {4, "_SPACE"}};
+    torch::jit::script::Module model;
+
+    Punctuator();
+    void setup_model(std::string model_path);
+    std::string decode(std::string sentence_ids, int size);
+};
 
 
 Punctuator::Punctuator(){
@@ -85,45 +100,45 @@ std::string Punctuator::decode(std::string sentence_ids, int size)
     return final_res;
 }
 
-int main()
-{
-    Punctuator punctuator;
-    std::map<int, std::string>::iterator iter;
-    for (iter = punctuator.label_dict.begin(); iter != punctuator.label_dict.end(); iter++)
-    {
-        std::cout << iter->first << " : " << iter->second << "\n";
-    }
+// int main()
+// {
+//     Punctuator punctuator;
+//     std::map<int, std::string>::iterator iter;
+//     for (iter = punctuator.label_dict.begin(); iter != punctuator.label_dict.end(); iter++)
+//     {
+//         std::cout << iter->first << " : " << iter->second << "\n";
+//     }
 
-    // punctuator.setup_input_dict("/root/projects/Pythons/cpp_punctuator/src/utils/vocab.txt");
+//     // punctuator.setup_input_dict("/root/projects/Pythons/cpp_punctuator/src/utils/vocab.txt");
 
-    // std::map<std::string, int>::iterator input_dict_it;
-    // input_dict_it = punctuator.input_dict.begin();
-    // while(input_dict_it != punctuator.input_dict.end()){
-    //     std::cout << input_dict_it->first << " : " << input_dict_it->second << "\n";
-    //     input_dict_it++;
-    // }
+//     // std::map<std::string, int>::iterator input_dict_it;
+//     // input_dict_it = punctuator.input_dict.begin();
+//     // while(input_dict_it != punctuator.input_dict.end()){
+//     //     std::cout << input_dict_it->first << " : " << input_dict_it->second << "\n";
+//     //     input_dict_it++;
+//     // }
 
-    punctuator.setup_model("/root/projects/Pythons/cpp_punctuator/models/punctuator/punctuator.pth");
+//     punctuator.setup_model("/root/projects/Pythons/cpp_punctuator/models/punctuator/punctuator.pth");
 
-    // at::Tensor input;
-    // input = torch::tensor({{2, 3, 55, 56}}).to(torch::kLong);
-    // std::vector<torch::jit::IValue> inputs;
-    // std::cout << input << "\n";
-    // inputs.push_back(input);
-    // std::cout << punctuator.model.forward(inputs).toTensor();
+//     // at::Tensor input;
+//     // input = torch::tensor({{2, 3, 55, 56}}).to(torch::kLong);
+//     // std::vector<torch::jit::IValue> inputs;
+//     // std::cout << input << "\n";
+//     // inputs.push_back(input);
+//     // std::cout << punctuator.model.forward(inputs).toTensor();
 
-    // std::cout << punctuator.decode("你好");
+//     // std::cout << punctuator.decode("你好");
 
-    std::string s = "55 56 90";
-    int input_size = 3;
-    punctuator.decode(s, input_size);
+//     std::string s = "55 56 90";
+//     int input_size = 3;
+//     punctuator.decode(s, input_size);
 
-    // for development only
-    // int s[] = {55, 56, 90};
-    // int s_size = sizeof(s)/sizeof(int);
-    // for (int i=0; i<s_size; i++){
-    //     std::cout << s[i] << "\n";
-    // }
+//     // for development only
+//     // int s[] = {55, 56, 90};
+//     // int s_size = sizeof(s)/sizeof(int);
+//     // for (int i=0; i<s_size; i++){
+//     //     std::cout << s[i] << "\n";
+//     // }
 
-    return 0;
-}
+//     return 0;
+// }

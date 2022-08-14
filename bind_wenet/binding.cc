@@ -1,13 +1,12 @@
 #include <pybind11/pybind11.h>
-#include <torch/script.h>
 
 #include "src/punctuator.cc"
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(Punctuator, m){
+PYBIND11_MODULE(punctuator, m){
     py::class_<Punctuator>(m, "Punctuator")
-        .def(py::init())
+        .def(py::init<>())
         .def("setup_model", &Punctuator::setup_model)
         .def("decode", &Punctuator::decode);
 }
