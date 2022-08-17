@@ -5,3 +5,8 @@ src/libtorch
 venv/
 **/pybind11
 **/libtorch
+**/dist
+**/.egg*
+**/.vscode
+**/punctuator.egg-info
+

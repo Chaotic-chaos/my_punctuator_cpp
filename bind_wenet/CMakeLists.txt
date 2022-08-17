@@ -42,7 +42,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -fPIC")
 #include(libtorch)
 
 
-link_directories(src/build)
+# link_directories(src/build)
 
 # target_link_libraries(punctuator "${TORCH_LIBRARIES}")
 # include(libtorch) 
@@ -50,7 +50,7 @@ link_directories(src/build)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -fPIC")
 
 pybind11_add_module(punctuator binding.cc)
-target_link_libraries(punctuator PRIVATE ${TORCH_LIBRARIES})
+target_link_libraries(punctuator PUBLIC ${TORCH_LIBRARIES} c10)
 
 #include_directories(/root/projects/Pythons/cpp_punctuator/bind/libtorch/include)
 

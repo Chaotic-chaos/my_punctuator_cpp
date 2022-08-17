@@ -12,4 +12,12 @@ Software:      Vscode
 Test the complie
 '''
 
-import 
+import punctuator
+
+model = punctuator.Punctuator()
+
+model.setup_model("models/punctuator/punctuator.pth")
+
+print(model.decode("55 56 70", 3))
+
+
