@@ -5,10 +5,10 @@
 # clone this repository
 git clone https://github.com/Chaotic-chaos/my_punctuator_cpp.git
 
-# perpare a environment
+# perpare an environment
 python -m vnev venv # or whatever ways u'd like
 
-# move into thr right directory
+# move into the right directory
 cd punctuator_installer/
 
 # start the building and installation
